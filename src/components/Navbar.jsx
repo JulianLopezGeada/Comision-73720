@@ -6,24 +6,24 @@ function Navbar({ logo, brand }) {
       <div className="flex items-center justify-center w-full">
         <a href="" className="flex items-center gap-4">
           <img src={logo} alt="logo de la MARCA" className="h-16 w-16" />
-          <h1 className="brand text-5xl text-center">{brand}</h1>
+          <h1 className="brand text-6xl text-center">{brand}</h1>
         </a>
       </div>
-      <div className="flex items-center justify-center w-full">
-        <ul className="flex text-center aling-center gap-6">
-          <li className="navbar-item">
-            <a href="" className="">
-              {"producto 1"}
+      <div className="flex items-center justify-around w-full">
+        <ul className="flex text-center aling-center gap-24">
+          <li>
+            <a href="" className="text-2xl ">
+              {"Producto 1"}
             </a>
           </li>
-          <li className="navbar-item">
-            <a href="" className="">
-              {"producto 2"}
+          <li>
+            <a href="" className="text-2xl">
+              {"Producto 2"}
             </a>
           </li>
-          <li className="navbar-item">
-            <a href="" className="">
-              {"producto 3"}
+          <li>
+            <a href="" className="text-2xl">
+              {"Producto 3"}
             </a>
           </li>
         </ul>
