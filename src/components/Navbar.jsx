@@ -1,36 +1,36 @@
 import CartWidget from "./CartWidget";
+import Dropdown from "./MenuDropdown";
+import { useEffect, useState } from "react";
 
 function Navbar({ logo, brand }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const url = "https://dummyjson.com/products/categories";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setCategories(data.category));
+  }, [categories]);
+
   return (
     <nav className="flex bg-blue-600 p-4 text-yellow-600 justify-between h-24 items-center">
-      <div className="flex items-center justify-center w-full">
-        <a href="" className="flex items-center gap-4">
-          <img src={logo} alt="logo de la MARCA" className="h-16 w-16" />
-          <h1 className="brand text-6xl text-center">{brand}</h1>
-        </a>
+      <div className="flex items-start justify-start w-full">
+        <img src={logo} alt="logo de la MARCA" className="h-16 w-16" />
+        <h1 className="brand text-6xl text-center">{brand}</h1>
       </div>
-      <div className="flex items-center justify-around w-full">
-        <ul className="flex text-center aling-center gap-24">
-          <li>
-            <a href="" className="text-2xl ">
-              {"Producto 1"}
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-2xl">
-              {"Producto 2"}
-            </a>
-          </li>
-          <li>
-            <a href="" className="text-2xl">
-              {"Producto 3"}
-            </a>
-          </li>
-        </ul>
-      </div>
+      <Dropdown />
       <CartWidget carrito={"../src/assets/shopping-cart.png"} />
     </nav>
   );
 }
 
 export default Navbar;
+
+{
+  /* <Dropdown as={Link} to={`/category/${cat}`}>
+        
+        {categories.map((cat) => (
+          <Link >{cat}</Link>
+        ))}
+      </Dropdown> */
+}
