@@ -12,7 +12,7 @@ function ItemListContainer() {
 
     fetch(categoryName ? urlCategory : url)
       .then((res) => res.json())
-      .then((data) => setItems(data.products));
+      .then((res) => setItems(res.products));
   }, [categoryName]);
 
   return <ItemList items={items} />;

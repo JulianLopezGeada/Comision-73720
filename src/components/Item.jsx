@@ -18,12 +18,16 @@ function Item({ item }) {
           <p className="mb-3 text-zinc-100 text-lg font-bold leading-relaxed dark:text-dark-6">
             {item.description}
           </p>
+          <p className="text-indigo-400 bg-amber-100 rounded-2xl mb-2 text-lg">
+            Categoria: {item.category}
+          </p>
+          <p className="text-indigo-400 mb-2 text-lg bg-amber-100 rounded-2xl">
+            Price: ${item?.price}
+          </p>
           <Button
-            text={"Detalles"}
+            text={"Ver detalles"}
             onClick={() => navigate(`/item/${item.id}`)}
-          >
-            Ver mas
-          </Button>
+          ></Button>
         </div>
       </div>
     </>

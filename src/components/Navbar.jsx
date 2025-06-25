@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget";
 import Dropdown from "./MenuDropdown";
 import { useEffect, useState } from "react";
+// import { Link } from "react-router";
 
 function Navbar({ logo, brand }) {
   const [categories, setCategories] = useState([]);
@@ -18,19 +19,10 @@ function Navbar({ logo, brand }) {
         <img src={logo} alt="logo de la MARCA" className="h-16 w-16" />
         <h1 className="brand text-6xl text-center">{brand}</h1>
       </div>
-      <Dropdown />
+      <Dropdown></Dropdown>
       <CartWidget carrito={"../src/assets/shopping-cart.png"} />
     </nav>
   );
 }
 
 export default Navbar;
-
-{
-  /* <Dropdown as={Link} to={`/category/${cat}`}>
-        
-        {categories.map((cat) => (
-          <Link >{cat}</Link>
-        ))}
-      </Dropdown> */
-}
